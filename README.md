@@ -157,7 +157,9 @@ LICENSE
 CONTACT
 -------
 
-  Please mail pom@epfl.ch for bug reports, comments and questions.
+  Please mail pom@epfl.ch for bug reports, comments and questions.  
+  
+## build  
 -------
 1. error: 'memset' was not declared in this scope  
   #include <string.h>  
@@ -171,4 +173,5 @@ png_get_rowbytes(png_ptr, info_ptr)
   //bit_depth = info_ptr->bit_depth;  channels = info_ptr->channels;  
   bit_depth = png_get_bit_depth( png_ptr,  info_ptr);//by hua  
   channels = png_get_channels( png_ptr,  info_ptr);//by hua  
+  http://www.libpng.org/pub/png/libpng-1.2.5-manual.html#section-4.3  
   
