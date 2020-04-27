@@ -132,7 +132,7 @@ REFERENCES
   For more information about the POM algorithm, please check the
   section V and appendix A of:
 
-  François Fleuret, Jérôme Berclaz, Richard Lengagne and Pascal Fua,
+  FranÃ§ois Fleuret, JÃ©rÃ´me Berclaz, Richard Lengagne and Pascal Fua,
   "Multi-Camera People Tracking with a Probabilistic Occupancy Map",
   IEEE Transactions on Pattern Analysis and Machine Intelligence
   (TPAMI), 2008, 30(2), 267--282.
@@ -158,3 +158,17 @@ CONTACT
 -------
 
   Please mail pom@epfl.ch for bug reports, comments and questions.
+-------
+1. error: 'memset' was not declared in this scope  
+  #include <string.h>  
+2. error: invalid use of incomplete type 'png_info' {aka 'struct png_info_def'}  
+
+Since libpng-1.5.0, direct access to these structs is not allowed. So, I have change the other code.  
+png_get_rowbytes(png_ptr, info_ptr)  
+
+  //color_type = info_ptr->color_type;  
+  color_type = png_get_color_type( png_ptr,  info_ptr);//by hua  
+  //bit_depth = info_ptr->bit_depth;  channels = info_ptr->channels;  
+  bit_depth = png_get_bit_depth( png_ptr,  info_ptr);//by hua  
+  channels = png_get_channels( png_ptr,  info_ptr);//by hua  
+  
